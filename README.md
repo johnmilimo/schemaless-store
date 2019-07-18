@@ -34,7 +34,7 @@
     
 ### Retrieve customer information
 
-    $ GET http://localhost:8080/customer/{code}
+    $ GET http://localhost:8080/customer/{customerId}
     
    Sample Output
         

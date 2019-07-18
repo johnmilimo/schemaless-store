@@ -10,9 +10,9 @@ class CustomerController {
     private lateinit var customerRepository: CustomerRepository
 
     /** Get customer details */
-    @GetMapping("/customer/{id}")
-    fun getCustomer(@PathVariable("id") id: String): Iterable<CustomerEntry>  {
-        return customerRepository.findAllByCustomerId(id)
+    @GetMapping("/customer/{customerId}")
+    fun getCustomer(@PathVariable("customerId") customerId: String): Iterable<CustomerEntry>  {
+        return customerRepository.findAllByCustomerId(customerId)
     }
 
     @PostMapping("/customer")
