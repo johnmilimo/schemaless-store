@@ -14,5 +14,4 @@ class KotldemoApplicationTests {
 	@Test
 	fun contextLoads() {
 	}
-
 }

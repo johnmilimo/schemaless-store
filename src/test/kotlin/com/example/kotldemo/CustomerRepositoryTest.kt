@@ -13,7 +13,7 @@ class CustomerRepositoryTest {
     @Autowired
     private lateinit var customerRepository: CustomerRepository
 
-    private val customerEntryId = CustomerEntryId(customerCode = "1", customerKey = "key")
+    private val customerEntryId = CustomerEntryId(customerId = "1", customerKey = "key")
 
     @Before
     fun setupTestData() {
@@ -29,10 +29,10 @@ class CustomerRepositoryTest {
 
     @Test
     fun findAllByCustomerCode() {
-        assertThat(customerRepository.findAllByCustomerCode("1")).hasOnlyOneElementSatisfying { entry ->
-            assertThat(entry.id.customerCode).isEqualTo("1")
+        assertThat(customerRepository.findAllByCustomerId("1")).hasOnlyOneElementSatisfying { entry ->
+            assertThat(entry.id.customerId).isEqualTo("1")
             assertThat(entry.id.customerKey).isEqualTo("key")
-            assertThat(entry.getCustomerCode()).isEqualTo("1")
+            assertThat(entry.getCustomerId()).isEqualTo("1")
             assertThat(entry.getCustomerKey()).isEqualTo("key")
             assertThat(entry.customerValue).isEqualTo("value")
         }

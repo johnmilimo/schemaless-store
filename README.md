@@ -25,14 +25,13 @@
     
    Sample Payload
     
-    ```
     {
-    	"customerCode": "1",
+    	"customerId": "1",
     	"customerKey": "name",
     	"customerValue": "John Doe"
     }
     
-    ```
+    
 ### Retrieve customer information
 
     $ GET http://localhost:8080/customer/{code}
@@ -43,24 +42,24 @@
         [
             {
                 "id": {
-                    "customerCode": "1",
+                    "customerId": "1",
                     "customerKey": "name"
                 },
                 "customerValue": "John Doe",
-                "customerCode": "1",
+                "customerId": "1",
                 "customerKey": "name"
             },
             {
                 "id": {
-                    "customerCode": "1",
+                    "customerId": "1",
                     "customerKey": "location"
                 },
                 "customerValue": "Luna",
-                "customerCode": "1",
+                "customerId": "1",
                 "customerKey": "location"
             }
         ]
         
     
     
-   Both `customerCode` and `customerKey` are used as composite primary keys
+   Both `customerId` and `customerKey` are used as composite primary keys

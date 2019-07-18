@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 @EnableScan
 @Repository
 interface CustomerRepository : CrudRepository<CustomerEntry, CustomerEntryId> {
-    fun findAllByCustomerCode(customerCode: String): Iterable<CustomerEntry>
+    fun findAllByCustomerId(customerId: String): Iterable<CustomerEntry>
 }

@@ -12,7 +12,7 @@ import java.io.Serializable
 data class CustomerEntryId (
 
         @field:DynamoDBHashKey
-        var customerCode: String? = null,
+        var customerId: String? = null,
 
         @field:DynamoDBRangeKey
         var customerKey: String? = null

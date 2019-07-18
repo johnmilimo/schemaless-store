@@ -10,15 +10,15 @@ class CustomerController {
     private lateinit var customerRepository: CustomerRepository
 
     /** Get customer details */
-    @GetMapping("/customer/{code}")
-    fun getCustomer(@PathVariable("code") code: String): Iterable<CustomerEntry>  {
-        return customerRepository.findAllByCustomerCode(code)
+    @GetMapping("/customer/{id}")
+    fun getCustomer(@PathVariable("id") id: String): Iterable<CustomerEntry>  {
+        return customerRepository.findAllByCustomerId(id)
     }
 
     @PostMapping("/customer")
     fun createCustomer(@RequestBody customer: CustomerEntry): CustomerEntry {
 
-        val customerEntryId = CustomerEntryId( customerCode = customer.getCustomerCode(),
+        val customerEntryId = CustomerEntryId( customerId = customer.getCustomerId(),
                 customerKey = customer.getCustomerKey())
 
         return customerRepository.save(CustomerEntry(customerEntryId).apply {
